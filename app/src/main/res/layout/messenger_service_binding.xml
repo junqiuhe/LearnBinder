@@ -5,31 +5,25 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/startService"
+        android:id="@+id/bind"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="launch by startService"/>
+        android:text="bind service"/>
 
     <Button
-        android:id="@+id/bindService"
+        android:id="@+id/unbind"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="launch by bindService"/>
+        android:text="unBind service"/>
 
-    <Button
-        android:id="@+id/startMessenger"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="launch Messenger."/>
 
-    <Button
-        android:id="@+id/useAidl"
+    <TextView
+        android:id="@+id/callback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Use Aidl demo"/>
+        android:padding="8dp"
+        android:layout_marginTop="16dp"/>
 
 </LinearLayout>

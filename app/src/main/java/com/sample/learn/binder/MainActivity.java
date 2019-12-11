@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.sample.learn.binder.aidl.RemoteActivity;
 import com.sample.learn.binder.local.LocalServiceActivities;
+import com.sample.learn.binder.messager.MessengerServiceActivities;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +29,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, LocalServiceActivities.Controller.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.startMessenger).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MessengerServiceActivities.Binding.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.useAidl).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RemoteActivity.class);
                 startActivity(intent);
             }
         });

@@ -23,6 +23,19 @@
 
         <service android:name=".local.LocalService"/>
 
+        <activity android:name=".messager.MessengerServiceActivities$Binding"/>
+
+        <service android:name=".messager.MessengerService"/>
+
+        <activity android:name=".aidl.RemoteActivity"/>
+
+        <service android:name=".aidl.RemoteService"
+            android:process=":aidl">
+            <intent-filter>
+                <action android:name="com.sample.aidl.service"/>
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

@@ -5,4 +5,9 @@
     <string name="local_service_disconnected">local service disconnected</string>
     <string name="local_service_started">local service started</string>
     <string name="local_service_label">local service</string>
+
+    <string name="remote_service_connected">remote service connected</string>
+    <string name="remote_service_disconnected">remote service disconnected</string>
+    <string name="remote_service_stopped">remote service stopped</string>
+
 </resources>
