@@ -2,6 +2,7 @@ package com.sample.learn.binder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +10,22 @@ import android.view.View;
 import com.sample.learn.binder.aidl.RemoteActivity;
 import com.sample.learn.binder.local.LocalServiceActivities;
 import com.sample.learn.binder.messager.MessengerServiceActivities;
+import com.sample.proxy.HookHelper;
 
 public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        try{
+//            HookHelper.hookActivityManager();
+
+            HookHelper.hookPackageManager();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        super.attachBaseContext(newBase);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
