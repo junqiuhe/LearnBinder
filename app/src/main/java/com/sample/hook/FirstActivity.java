@@ -22,7 +22,7 @@ public class FirstActivity extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
 
-        ActivityStarter.hookAMN("com.sample.StubActivity");
+        ActivityStarter.hookAMN("com.sample.hook.StubActivity");
 //        ActivityStarter.hookActivityThreadBymH();
 
         ActivityStarter.hookActivityThreadInstrumentation();

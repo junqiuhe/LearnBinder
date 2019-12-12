@@ -44,7 +44,7 @@
         -->
 
         <!--替身Activity-->
-        <activity android:name="com.sample.StubActivity"/>
+        <activity android:name="com.sample.hook.StubActivity"/>
 
     </application>
 

@@ -51,3 +51,8 @@ Hook点:
     
     2、AMS通知 APP启动 StubActivity 时，我们自然不会启动StubActivity, 而是在即将启动的时候，把StubActivity替换为原先的Activity。
     原先的Activity信息存放在Bundle中，取出来就好了。
+    
+    
+[Android9.0 Activity启动原理差异解析](https://www.jianshu.com/p/aa03c4458b9a)
+
+[手把手讲解 Android Hook-实现无清单启动Activity](https://www.jianshu.com/p/eb772e50c690)
