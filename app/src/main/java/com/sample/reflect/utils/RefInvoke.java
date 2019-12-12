@@ -34,8 +34,8 @@ public class RefInvoke {
 
     public static Object newInstance(Class clazz, Class[] parameterTypes, Object[] parameterValues){
         try{
-            Constructor constructor = clazz.getConstructor(parameterTypes);
-            return constructor.newInstance(parameterTypes);
+            Constructor<?> constructor = clazz.getConstructor(parameterTypes);
+            return constructor.newInstance(parameterValues);
         }catch (Exception e){
             throw new RuntimeException(e);
         }

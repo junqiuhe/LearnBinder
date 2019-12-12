@@ -7,24 +7,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.sample.hook.FirstActivity;
 import com.sample.learn.binder.aidl.RemoteActivity;
 import com.sample.learn.binder.local.LocalServiceActivities;
 import com.sample.learn.binder.messager.MessengerServiceActivities;
-import com.sample.proxy.HookHelper;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void attachBaseContext(Context newBase) {
-        try{
-//            HookHelper.hookActivityManager();
-
-            HookHelper.hookPackageManager();
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
         super.attachBaseContext(newBase);
+
+//            HookAMSHelper.hookActivityManager();
+//            HookPMSHelper.hookPackageManager();
     }
 
     @Override
@@ -60,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RemoteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.hookDemoBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FirstActivity.class);
                 startActivity(intent);
             }
         });

@@ -36,6 +36,16 @@
             </intent-filter>
         </service>
 
+        <activity android:name="com.sample.hook.FirstActivity"/>
+
+        <!--
+        Target Activity.
+        <activity android:name="com.sample.hook.SecondActivity"/>
+        -->
+
+        <!--替身Activity-->
+        <activity android:name="com.sample.StubActivity"/>
+
     </application>
 
 </manifest>

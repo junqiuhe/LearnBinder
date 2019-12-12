@@ -1,4 +1,4 @@
-package com.sample.proxy;
+package com.sample.reflect.utils;
 
 import android.os.Build;
 import android.util.Log;
@@ -15,50 +15,7 @@ import java.util.Arrays;
  * Created by hejunqiu on 2019/12/11 15:34
  * Description:
  */
-public class HookHelper {
-
-    /**
-     * 对ActivityManagerService进行Hook.
-     */
-    public static void hookActivityManager() {
-        try {
-            Object gDefault;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                gDefault = RefInvoke.getStaticFieldObject(
-                        "android.app.ActivityManager",
-                        "IActivityManagerSingleton");
-
-            } else {
-                //获取 android.app.ActivityManagerNative 静态属性的值.
-                gDefault = RefInvoke.getStaticFieldObject(
-                        "android.app.ActivityManagerNative",
-                        "gDefault");
-            }
-
-            // 执行实例 Singleton get 方法 初始化 mInstance属性
-            RefInvoke.invokeInstanceMethod("android.util.Singleton",
-                    gDefault,
-                    "get");
-
-            Object originObj = RefInvoke.getFieldObject(
-                    "android.util.Singleton",
-                    gDefault,
-                    "mInstance");
-
-            Object proxy = Proxy.newProxyInstance(
-                    originObj.getClass().getClassLoader(),
-                    originObj.getClass().getInterfaces(), new HookHandler(originObj));
-
-            RefInvoke.setFieldObject(
-                    "android.util.Singleton",
-                    gDefault,
-                    "mInstance",
-                    proxy);
-
-        } catch (Exception e) {
-            throw new RuntimeException("Hook Failed", e);
-        }
-    }
+public class HookPMSHelper {
 
     public static void hookPackageManager() {
         try {
