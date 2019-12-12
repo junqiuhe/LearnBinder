@@ -1,9 +1,8 @@
-package com.sample.reflect.utils;
+package com.sample.learn.plugin.helper;
 
-import android.os.Build;
 import android.util.Log;
 
-import com.sample.reflect.utils.RefInvoke;
+import com.sample.RefInvoke;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

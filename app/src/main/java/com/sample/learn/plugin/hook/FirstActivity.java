@@ -1,4 +1,4 @@
-package com.sample.hook;
+package com.sample.learn.plugin.hook;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.sample.learn.binder.R;
-import com.sample.reflect.utils.ActivityStarter;
+import com.sample.learn.plugin.helper.ActivityStarter;
 
 /**
  * Project Name：LearnBinder
@@ -22,7 +22,7 @@ public class FirstActivity extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
 
-        ActivityStarter.hookAMN("com.sample.hook.StubActivity");
+        ActivityStarter.hookAMN("com.sample.learn.plugin.hook.StubActivity");
 //        ActivityStarter.hookActivityThreadBymH();
 
         ActivityStarter.hookActivityThreadInstrumentation();

@@ -1,4 +1,4 @@
-package com.sample.reflect.utils;
+package com.sample;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

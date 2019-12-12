@@ -1,4 +1,4 @@
-package com.sample.reflect.utils;
+package com.sample.learn.plugin.helper;
 
 import android.app.Activity;
 import android.app.Instrumentation;
@@ -10,6 +10,8 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.util.Log;
+
+import com.sample.RefInvoke;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

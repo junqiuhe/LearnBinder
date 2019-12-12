@@ -36,15 +36,15 @@
             </intent-filter>
         </service>
 
-        <activity android:name="com.sample.hook.FirstActivity"/>
+        <activity android:name="com.sample.learn.plugin.hook.FirstActivity"/>
 
         <!--
         Target Activity.
-        <activity android:name="com.sample.hook.SecondActivity"/>
+        <activity android:name="com.sample.learn.plugin.hook.SecondActivity"/>
         -->
 
         <!--替身Activity-->
-        <activity android:name="com.sample.hook.StubActivity"/>
+        <activity android:name="com.sample.learn.plugin.hook.StubActivity"/>
 
     </application>
 

@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.sample.hook.FirstActivity;
+import com.sample.learn.plugin.hook.FirstActivity;
 import com.sample.learn.binder.aidl.RemoteActivity;
 import com.sample.learn.binder.local.LocalServiceActivities;
 import com.sample.learn.binder.messager.MessengerServiceActivities;
