@@ -1,2 +1,12 @@
-include ':app'
-rootProject.name='LearnBinder'
+//include ':app'
+
+/**
+ * hostapp: 宿主app.
+ * plugin1: 插件app.
+ * mylibrary: 公用的的库.
+ */
+include ':hostapp'
+include ':plugin1'
+include ':mylibrary'
+
+rootProject.name = 'LearnBinder'

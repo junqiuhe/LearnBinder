@@ -1,4 +1,4 @@
-package com.sample;
+package com.sample.learn.plugin.utils;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -14,6 +14,14 @@ public class RefInvoke {
     public static Class createClazz(String className) {
         try {
             return Class.forName(className);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static Class createClazz(ClassLoader classLoader, String className) {
+        try {
+            return classLoader.loadClass(className);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -36,6 +44,25 @@ public class RefInvoke {
         try{
             Constructor<?> constructor = clazz.getConstructor(parameterTypes);
             return constructor.newInstance(parameterValues);
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static Object newInstance(ClassLoader classLoader, String className){
+        try{
+            return newInstance(createClazz(classLoader, className));
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static Object newInstance(ClassLoader classLoader,
+                                     String className,
+                                     Class[] parameterTypes,
+                                     Object[] parameterValues){
+        try{
+            return newInstance(createClazz(classLoader, className), parameterTypes, parameterValues);
         }catch (Exception e){
             throw new RuntimeException(e);
         }

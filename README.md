@@ -56,3 +56,14 @@ Hook点:
 [Android9.0 Activity启动原理差异解析](https://www.jianshu.com/p/aa03c4458b9a)
 
 [手把手讲解 Android Hook-实现无清单启动Activity](https://www.jianshu.com/p/eb772e50c690)
+
+
+#### Android 资源
+
+    Android中资源的分类:
+        
+    1、res 目录下存放的可编译的资源文件。编译时，系统会自动在R.java中生成资源文件的十六进制.
+    （可通过Resources对象获取资源.）
+    
+    2、assets目录下存放的原始资源文件。（可利用AssetsManager类的open方法来获取assets目录下的文件资源）
+    

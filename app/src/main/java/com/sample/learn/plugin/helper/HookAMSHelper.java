@@ -11,7 +11,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.util.Log;
 
-import com.sample.RefInvoke;
+import com.sample.learn.plugin.utils.RefInvoke;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
