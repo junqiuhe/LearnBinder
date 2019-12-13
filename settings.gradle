@@ -6,7 +6,7 @@
  * mylibrary: 公用的的库.
  */
 include ':hostapp'
-include ':plugin1'
+//include ':plugin1'
 include ':mylibrary'
 
 rootProject.name = 'LearnBinder'

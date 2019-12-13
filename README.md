@@ -67,3 +67,32 @@ Hook点:
     
     2、assets目录下存放的原始资源文件。（可利用AssetsManager类的open方法来获取assets目录下的文件资源）
     
+    
+#### [最简单的插件化方案.](https://www.zhihu.com/pub/reader/119567993/chapter/1016383525167067136)
+
+    1、合并所有插件的dex,来解决插件的类的加载问题. 
+    (通过DexClassLoader加载插件中的类信息，添加到宿主中的classLoader dexElements中。)
+    
+    2、预先在宿主的AndroidManifest.xml文件中声明插件中的四大组件。
+    
+    3、把插件中的所有资源一次性地合并到宿主的资源中。
+    （AssetManager加载插件中的资源.）
+    
+问题? 
+
+1）、因为插件和宿主的资源都合并到了一起，资源Id可能会存在冲突
+
+2）、不能事先预料插件中有哪些组件。
+
+
+#### [Activity的插件化解决方案](https://www.zhihu.com/pub/reader/119567993/chapter/1016383525217570816)
+
+Activity 的插件化需要解决3方面的技术问题：
+    
+    1、宿主App可以加载插件App中的类
+    
+    2、宿主App可以加载插件App中的资源
+    
+    3、宿主App可以加载插件中的Activity.
+    
+如何启动没有在 AndroidManifest.xml 文件中声明的插件 Activity? 参考 ActivityStarter.java
