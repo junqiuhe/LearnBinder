@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "com.sample.learn.dynamic.hostapp"
+        applicationId "com.sample.learn.hostapp"
 
         minSdkVersion 15
         targetSdkVersion 28
